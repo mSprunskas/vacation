@@ -101,7 +101,7 @@ Form.defaultProps = {
     onUpdate: () => null,
 };
 
-// TODO:   dateFrom, dateTo types
+// TODO: dateFrom, dateTo types
 Form.propTypes = {
     employee: PropTypes.string.isRequired,
     dateFrom: PropTypes.object.isRequired,

@@ -2,3 +2,4 @@
 - travis tests
 - code style guide
 - he / she
+- print styles

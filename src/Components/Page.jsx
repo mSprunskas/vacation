@@ -1,4 +1,4 @@
-import React, {Fragment, PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import ls from 'local-storage';
 
 import Request from "./Request";
