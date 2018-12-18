@@ -1,0 +1,4 @@
+- favicon
+- travis tests
+- code style guide
+- he / she

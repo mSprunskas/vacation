@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "ie >= 9"]
+        },
+        "useBuiltIns": "entry"
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "ignore": [
+    "node_modules"
+  ],
+  "plugins": ["@babel/plugin-transform-runtime"]
+}
