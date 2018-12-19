@@ -14,7 +14,7 @@ const Request = ({ employee, dateFrom, dateTo }) => (
             <p>(vardas, pavardė)</p>
         </section>
 
-        <div>UAB "Paysera LT" personalo vadybininkei</div>
+        <div>{COMPANY_NAME} personalo vadybininkei</div>
         <div>{dative(HR_MANAGER)}</div>
 
         <section className="text-right">
