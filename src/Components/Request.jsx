@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { humanizeDate, accusative, dative } from '../Utils';
+import { humanizeDate, accusative, dative, Document } from '../Utils';
 
 // TODO: move to config
 const HR_MANAGER = 'Indrė Andriulevičiūtė';
-const COMPANY_NAME = 'UAB „PayseraLT“';
+const COMPANY_NAME = 'UAB „Paysera LT“';
 
-const Request = ({ employee, dateFrom, dateTo }) => (
+const Request = ({ document }) => (
     <div className="container-fluid">
         <section>
-            <div><span className="highlight">{employee}</span></div>
+            <div><span className="highlight">{document.getEmployee()}</span></div>
             <p>(vardas, pavardė)</p>
         </section>
 
@@ -23,12 +23,12 @@ const Request = ({ employee, dateFrom, dateTo }) => (
         </section>
 
         <section>
-            Prašau išleisti mane eilinių atostogų nuo {humanizeDate(dateFrom)} d. iki {humanizeDate(dateTo)} d. imtinai.
+            Prašau išleisti mane eilinių atostogų nuo {humanizeDate(document.getFrom())} d. iki {humanizeDate(document.getTo())} d. imtinai.
             Atostoginius prašau išmokėti kartu su to mėnesio atlyginimu.
         </section>
 
         <section>
-            <div><span className="highlight">{employee}</span></div>
+            <div><span className="highlight">{document.getEmployee()}</span></div>
 
             <div className="row">
                 <div className="col-xs-6">(vardas, pavardė) </div>
@@ -60,7 +60,7 @@ const Request = ({ employee, dateFrom, dateTo }) => (
 
         <section>
             Aš, {COMPANY_NAME} personalo vadybininkė, {HR_MANAGER} įsakau išleisti
-            eilinių atostogų <span className="highlight">{accusative(employee)}</span> jo prašymu nuo {humanizeDate(dateFrom)} d. iki {humanizeDate(dateTo)} d. imtinai.
+            eilinių atostogų <span className="highlight">{accusative(document.getEmployee())}</span> jo prašymu nuo {humanizeDate(document.getFrom())} d. iki {humanizeDate(document.getTo())} d. imtinai.
         </section>
 
         <section>
@@ -73,9 +73,7 @@ const Request = ({ employee, dateFrom, dateTo }) => (
 );
 
 Request.propTypes = {
-    employee: PropTypes.string.isRequired,
-    dateFrom: PropTypes.object.isRequired,
-    dateTo: PropTypes.object.isRequired,
+    document: PropTypes.instanceOf(Document).isRequired,
 };
 
 export default Request;

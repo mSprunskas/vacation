@@ -2,5 +2,5 @@
 - travis tests
 - code style guide
 - he / she
-- print styles
 - remove routing, gh-pages, etc
+- fix code TODO's

@@ -1,69 +1,70 @@
 import React, { PureComponent } from 'react';
-import ls from 'local-storage';
 
-import Request from "./Request";
-import Form from "./Form";
+import { Storage, Document } from '../Utils';
+import Request from './Request';
+import Form from './Form';
 
-const INITIAL_STATE = {
-    employee: '',
-    dateFrom: new Date(),
-    dateTo: new Date(),
-};
+const storage = new Storage();
 
 class Page extends PureComponent {
     constructor(props) {
         super(props);
 
         this.state = {
-            employee: 'Vardenis Pavardenis',
-            dateFrom: new Date(),
-            dateTo: new Date(),
+            document: null,
         };
-
-        this.storageKey = 'vacation';
 
         this.onUpdated = this.onUpdated.bind(this);
     }
 
     componentDidMount() {
-        const data = ls.get(this.storageKey) || {};
+        const document = storage.read();
 
-        // TODO: fixme
         this.setState({
-            employee: data.employee ?  data.employee : '',
-            //dateFrom: data.dateFrom ?  new Date(data.dateFrom) : new Date(),
-            //dateTo: data.dateTo ?  new Date(data.dateTo) : new Date(),
+            document,
         });
     }
 
-    onUpdated(data) {
+    /**
+     * @param {Document} document
+     */
+    onUpdated(document) {
         this.setState(
-            data,
+            {
+                document,
+            },
             () => {
-                ls.set(this.storageKey, data);
+                storage.write(document);
             }
         );
     }
 
     render() {
-        const { employee, dateFrom, dateTo } = this.state;
+        const { document } = this.state;
 
         return (
-            <div className="page-layout">
-                <Request
-                    employee={employee}
-                    dateFrom={dateFrom}
-                    dateTo={dateTo}
-                />
-                <hr />
-                <div className="container-fluid">
-                    <Form
-                        onUpdate={this.onUpdated}
-                        employee={employee}
-                        dateFrom={dateFrom}
-                        dateTo={dateTo}
-                    />
-                </div>
+            <div className="">
+                <aside className="sidebar">
+                    <div className="panel panel-default">
+                        <div className="panel-body">
+                            {document !== null && (
+                                <Form
+                                    onUpdate={this.onUpdated}
+                                    document={document}
+                                />
+                            )}
+                        </div>
+                    </div>
+                </aside>
+                <main className="main">
+                    <div className="doc-container">
+                        {document !== null && (
+                            <Request
+                                document={document}
+                            />
+                        )}
+                    </div>
+                </main>
             </div>
         );
     }

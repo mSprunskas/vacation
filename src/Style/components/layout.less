@@ -1,0 +1,26 @@
+@sidebar-width: 350px;
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: @sidebar-width;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: @color-wild-sand;
+    border-right: 1px solid @color-gallery;
+}
+
+.main {
+    margin-left: @sidebar-width;
+
+    .doc-container {
+        padding: 50px 0;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
