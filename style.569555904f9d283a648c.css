@@ -9797,6 +9797,28 @@ button.close {
   overflow: visible;
   clip: auto;
 }
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+}
+.main {
+  margin-left: 350px;
+}
+.main .doc-container {
+  padding: 50px 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
 .page-layout {
   padding: 50px 0;
   max-width: 800px;
@@ -9808,8 +9830,20 @@ section {
 .highlight {
   display: inline-block;
   padding: 0 5px;
-  background: beige;
+  background: #f5f5dc;
+}
+@media print {
+  .sidebar {
+    display: none;
+  }
+  .main {
+    margin: 0 auto;
+  }
+  .highlight {
+    background: none;
+    padding: 0;
+  }
 }
 
 
-/*# sourceMappingURL=style.5fbad8523628beaa040a.css.map*/
+/*# sourceMappingURL=style.569555904f9d283a648c.css.map*/
