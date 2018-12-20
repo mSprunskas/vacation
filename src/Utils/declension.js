@@ -98,10 +98,18 @@ const replaceWith = (fullname, map) => {
     return replaced.join(' ');
 };
 
+/**
+ * @param {string} fullname
+ * @returns {string}
+ */
 const accusative = (fullname) => {
     return replaceWith(fullname, MAP_ACCUSATIVE);
 };
 
+/**
+ * @param {string} fullname
+ * @returns {string}
+ */
 const dative = (fullname) => {
     return replaceWith(fullname, MAP_DATIVE);
 };

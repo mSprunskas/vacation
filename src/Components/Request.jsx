@@ -18,12 +18,13 @@ const Request = ({ document }) => (
         <div>{dative(HR_MANAGER)}</div>
 
         <section className="text-right">
-            <h1>Prašymas</h1>
+            <h1 className="text-uppercase">Prašymas</h1>
             <p>{humanizeDate()} diena</p>
         </section>
 
         <section>
-            Prašau išleisti mane eilinių atostogų nuo {humanizeDate(document.getFrom())} d. iki {humanizeDate(document.getTo())} d. imtinai.
+            Prašau išleisti mane eilinių atostogų nuo
+            {humanizeDate(document.getFrom())} d. iki {humanizeDate(document.getTo())} d. imtinai.
             Atostoginius prašau išmokėti kartu su to mėnesio atlyginimu.
         </section>
 
@@ -54,13 +55,14 @@ const Request = ({ document }) => (
         </section>
 
         <section className="text-right">
-            <h2>ĮSAKYMAS NR.</h2>
+            <h2 className="text-uppercase">Įsakymas nr.</h2>
             <p>{humanizeDate()} diena</p>
         </section>
 
         <section>
-            Aš, {COMPANY_NAME} personalo vadybininkė, {HR_MANAGER} įsakau išleisti
-            eilinių atostogų <span className="highlight">{accusative(document.getEmployee())}</span> jo prašymu nuo {humanizeDate(document.getFrom())} d. iki {humanizeDate(document.getTo())} d. imtinai.
+            Aš, {COMPANY_NAME} personalo vadybininkė, {HR_MANAGER} įsakau išleisti eilinių atostogų
+            <span className="highlight">{accusative(document.getEmployee())}</span> šiuo prašymu
+            nuo {humanizeDate(document.getFrom())} d. iki {humanizeDate(document.getTo())} d. imtinai.
         </section>
 
         <section>

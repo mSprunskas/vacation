@@ -18,6 +18,10 @@ class Form extends PureComponent {
         this.submit = this.submit.bind(this);
     }
 
+    /**
+     * @param {string} field
+     * @param value
+     */
     handleChange(field, value) {
         const { document } = this.state;
 
@@ -72,6 +76,7 @@ class Form extends PureComponent {
                             selected={document.getFrom()}
                             dateFormat="yyyy-MM-dd"
                             className="form-control"
+                            dropdownMode="select"
                             onChange={(value) => {
                                 this.handleChange('dateFrom', value)
                             }}
@@ -85,6 +90,7 @@ class Form extends PureComponent {
                             selected={document.getTo()}
                             dateFormat="yyyy-MM-dd"
                             className="form-control"
+                            dropdownMode="select"
                             onChange={(value) => {
                                 this.handleChange('dateTo', value)
                             }}

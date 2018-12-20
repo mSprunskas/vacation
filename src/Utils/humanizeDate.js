@@ -1,5 +1,9 @@
 import moment from 'moment';
 
+/**
+ * @param {Date|null} date
+ * @returns {string}
+ */
 export default (date = null) => {
     date = date === null ? new Date() : date;
 

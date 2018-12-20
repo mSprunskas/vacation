@@ -12,8 +12,8 @@ module.exports = merge(common, {
     },
     plugins: [
         new webpack.DefinePlugin({
-            'COMPANY_NAME': 'UAB „PayseraLT“',
-            'HR_MANAGER': 'Indrė Andriulevičiūtė',
+            COMPANY_NAME: JSON.stringify('UAB „Paysera LT“'),
+            HR_MANAGER: JSON.stringify('Indrė Andriulevičiūtė'),
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],

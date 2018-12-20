@@ -1,6 +1,0 @@
-- favicon
-- travis tests
-- code style guide
-- he / she
-- remove routing, gh-pages, etc
-- fix code TODO's

@@ -9,8 +9,8 @@ module.exports = merge(common, {
     devtool: 'source-map',
     plugins: [
         new webpack.DefinePlugin({
-            'COMPANY_NAME': 'UAB „PayseraLT“',
-            'HR_MANAGER': 'Indrė Andriulevičiūtė',
+            COMPANY_NAME: JSON.stringify('UAB „Paysera LT“'),
+            HR_MANAGER: JSON.stringify('Indrė Andriulevičiūtė'),
         }),
         new CleanWebpackPlugin([path.resolve(__dirname, '../dist/*.*')], {
             root: process.cwd(),
