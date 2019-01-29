@@ -23,8 +23,8 @@ const Request = ({ document }) => (
         </section>
 
         <section>
-            Prašau išleisti mane eilinių atostogų nuo
-            {humanizeDate(document.getFrom())} d. iki {humanizeDate(document.getTo())} d. imtinai.
+            Prašau išleisti mane eilinių atostogų nuo {humanizeDate(document.getFrom())} d.
+            iki {humanizeDate(document.getTo())} d. imtinai.
             Atostoginius prašau išmokėti kartu su to mėnesio atlyginimu.
         </section>
 
